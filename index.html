@@ -21,6 +21,16 @@
       flex-direction: column;
       justify-content: center;
       scroll-snap-align: start;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    /* Reduce card heights in Highlights to fit one screen */
+    .highlight-card img {
+      height: 120px;
+      object-fit: cover;
+    }
+    .highlight-card {
+      padding: 1rem;
     }
   </style>
 </head>
@@ -29,9 +39,7 @@
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <!-- Logo image instead of text -->
       <img src="https://d1c2gz5q23tkk0.cloudfront.net/assets/networks/1403/avatar/3cd7fe91fcfb567686d9762c52a3b07b-large.?1629194713" alt="BOVD Logo" class="h-12 w-auto">
-      
       <nav class="space-x-6 text-lg">
         <a href="#hero" class="hover:text-blue-600">ChatGABV</a>
         <a href="#bovd" class="hover:text-blue-600">Banking on Values Day</a>
@@ -43,7 +51,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white flex flex-col justify-center items-center">
+  <section id="hero" class="text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
     <h2 class="text-5xl font-extrabold mb-6">Welcome to ChatGABV</h2>
     <p class="max-w-2xl mx-auto text-xl mb-6">
       Our smartest model. Great for re-imagining the future.<br/>
@@ -55,30 +63,29 @@
   </section>
 
   <!-- Banking on Values Day Section -->
-  <section id="bovd" class="bg-white text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
-    <!-- New image above the title -->
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa3XKtJBWXwTAt9zzGuTeLuq4LeRZwnsjH-g&s" alt="Banking on Values Image" class="mb-6 max-w-xs rounded-xl shadow">
+  <section id="bovd" class="bg-white text-gray-900 text-center">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa3XKtJBWXwTAt9zzGuTeLuq4LeRZwnsjH-g&s" alt="Banking on Values Image" class="mb-4 max-w-xs mx-auto rounded-xl shadow">
 
-    <h3 class="text-4xl font-bold mb-6">Banking on Values Day</h3>
-    <p class="text-xl max-w-3xl mb-8">
+    <h3 class="text-4xl font-bold mb-4">Banking on Values Day</h3>
+    <p class="text-lg max-w-2xl mx-auto mb-6">
       Banking On Values Day brings together a global movement for positive transformation.<br/>
       Driven by the Global Alliance for Banking on Values (GABV).
     </p>
-    <h2 class="text-5xl font-extrabold mb-6">BOVD 2025</h2>
+    <h2 class="text-3xl font-extrabold mb-4">BOVD 2025</h2>
 
-    <div class="max-w-3xl mb-6">
-      <h4 class="text-2xl font-semibold mb-4">ChatGABV: Help AI Rethink Banking</h4>
-      <p class="mb-4">
+    <div class="max-w-2xl mx-auto mb-6 text-left">
+      <h4 class="text-xl font-semibold mb-2">ChatGABV: Help AI Rethink Banking</h4>
+      <p class="mb-2">
         AI needs to see and learn new ways of doing banking. Otherwise, it can keep us stuck in the status quo of profit over people.
       </p>
-      <p class="mb-4 font-semibold">There is a different way.</p>
-      <p class="mb-4">
+      <p class="mb-2 font-semibold">There is a different way.</p>
+      <p class="mb-2">
         We can shape AI so it learns that banking can be different from the past. To see a future which already exists, where the goal of banking is to serve our collective needs.
       </p>
-      <p class="mb-4">
+      <p class="mb-2">
         Once we help AI see the future, then other people can see it too. And join our work toward a better world.
       </p>
-      <p class="mb-4 font-semibold">
+      <p class="mb-2 font-semibold">
         Let’s teach AI what banking can really mean.
       </p>
       <p class="italic text-blue-600">#ChatGABV</p>
@@ -90,29 +97,45 @@
   </section>
 
   <!-- Film Section -->
-  <section id="film" class="max-w-4xl mx-auto py-16 px-4 text-center flex flex-col justify-center items-center">
+  <section id="film" class="max-w-4xl mx-auto text-center">
     <h3 class="text-4xl font-bold mb-6">Watch the Film</h3>
     <div class="aspect-video rounded-xl overflow-hidden shadow w-full">
       <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" title="BOVD Film" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
 
-  <!-- Why It Matters Section -->
-  <section id="why" class="bg-gray-100 py-16 flex flex-col justify-center items-center">
-    <div class="max-w-4xl mx-auto text-center px-4">
-      <h3 class="text-4xl font-bold mb-6">Why It Matters</h3>
-      <p class="text-xl leading-relaxed">
-        Banking On Values Day brings together a global movement for positive transformation.<br/>
-        Driven by the Global Alliance for Banking on Values (GABV).<br/>
-        This section also includes highlights from around the world.
-      </p>
+  <!-- Why It Matters + Highlights Section -->
+  <section id="why" class="bg-gray-100 text-center">
+    <h3 class="text-4xl font-bold mb-4">Why It Matters</h3>
+    <p class="text-lg max-w-3xl mx-auto mb-6">
+      Banking On Values Day brings together a global movement for positive transformation.<br/>
+      Driven by the Global Alliance for Banking on Values (GABV).<br/>
+      Highlighting good banking around the world.
+    </p>
+
+    <div class="grid gap-4 md:grid-cols-3 max-w-6xl mx-auto">
+      <div class="highlight-card bg-white rounded-xl shadow">
+        <img src="https://www.gabv.org/wp-content/uploads/2023/11/BH-3-1536x863.jpg" alt="Triodos Bank" class="rounded-xl mb-2 w-full">
+        <h4 class="font-bold text-lg mb-1">Triodos Bank, UK</h4>
+        <p class="text-gray-600 text-sm">Support for nature-based investment projects.</p>
+      </div>
+      <div class="highlight-card bg-white rounded-xl shadow">
+        <img src="https://www.gabv.org/wp-content/uploads/2023/10/Zwei-Manner-mit-einer-Kiste-Tomaten.jpg" alt="Freie Gemeinschaftsbank" class="rounded-xl mb-2 w-full">
+        <h4 class="font-bold text-lg mb-1">Freie Gemeinschaftsbank, CH</h4>
+        <p class="text-gray-600 text-sm">Pay what you want: customers decide their own fees.</p>
+      </div>
+      <div class="highlight-card bg-white rounded-xl shadow">
+        <img src="https://www.gabv.org/wp-content/uploads/2023/10/Porterville-BSB-Portraits-2023-215-1536x1024.jpg" alt="Beneficial State Bank" class="rounded-xl mb-2 w-full">
+        <h4 class="font-bold text-lg mb-1">Beneficial State Bank</h4>
+        <p class="text-gray-600 text-sm">Helping immigrants get access to credit.</p>
+      </div>
     </div>
   </section>
 
   <!-- Call to Action -->
-  <section id="cta" class="bg-blue-600 text-white py-16 text-center flex flex-col justify-center items-center">
+  <section id="cta" class="bg-blue-600 text-white text-center">
     <h3 class="text-4xl font-bold mb-4">Shape the Future of AI</h3>
-    <p class="text-xl max-w-2xl mx-auto mb-8">
+    <p class="text-lg max-w-2xl mx-auto mb-6">
       Let's teach AI what banking can really mean — and inspire others to join us.
     </p>
     <a href="https://your-guide-link" class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl shadow hover:scale-105 transition">
@@ -125,40 +148,36 @@
     © 2025 BOVD Microsite · Co-created with AI
   </footer>
 
-  <!-- Robust Slide-like Scroll JS -->
+  <!-- Fixed slide-scroll JS -->
   <script>
     const sections = document.querySelectorAll("section");
+    let currentIndex = 0;
     let isScrolling = false;
 
-    const scrollToSection = (index) => {
-      isScrolling = true;
-      sections[index].scrollIntoView({ behavior: "smooth" });
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            currentIndex = Array.from(sections).indexOf(entry.target);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+    sections.forEach(sec => observer.observe(sec));
 
-      const checkIfDone = () => {
-        const top = sections[index].getBoundingClientRect().top;
-        if (Math.abs(top) < 2) {
-          isScrolling = false;
-        } else {
-          requestAnimationFrame(checkIfDone);
-        }
-      };
-
-      requestAnimationFrame(checkIfDone);
-    };
-
-    window.addEventListener("wheel", (e) => {
+    window.addEventListener("wheel", e => {
       if (isScrolling) return;
+      isScrolling = true;
 
-      const delta = e.deltaY;
-      const currentIndex = Array.from(sections).findIndex(
-        sec => sec.getBoundingClientRect().top >= -1
-      );
-
-      if (delta > 0 && currentIndex < sections.length - 1) {
-        scrollToSection(currentIndex + 1);
-      } else if (delta < 0 && currentIndex > 0) {
-        scrollToSection(currentIndex - 1);
+      if (e.deltaY > 0 && currentIndex < sections.length - 1) {
+        currentIndex += 1;
+      } else if (e.deltaY < 0 && currentIndex > 0) {
+        currentIndex -= 1;
       }
+
+      sections[currentIndex].scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => { isScrolling = false; }, 600);
     });
   </script>
 </body>
