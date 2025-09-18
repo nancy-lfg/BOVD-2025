@@ -45,18 +45,36 @@
 
     <!-- New prompts from wireframe -->
     <p class="text-lg italic mb-2">Let’s start with fundamental questions about banking.</p>
-    <p class="text-lg mb-6">Ask me about banking. Ready when you are.</p>
+    <p class="text-lg mb-2">Ask me about banking. Ready when you are.</p>
     <p class="text-lg mb-6">Click the arrow (if you’re curious).</p>
 
     <!-- Chat-like button -->
-    <div class="flex items-center bg-white text-gray-800 rounded-full shadow-md px-4 py-3 max-w-md w-full cursor-pointer hover:shadow-lg transition mt-6">
+    <div onclick="document.getElementById('chatModal').classList.remove('hidden')" 
+         class="flex items-center bg-white text-gray-800 rounded-full shadow-md px-4 py-3 max-w-md w-full cursor-pointer hover:shadow-lg transition mt-6">
       <span class="flex-grow text-left text-gray-600">What is the main goal of a bank?</span>
       <span class="ml-2 text-blue-600 font-bold text-xl">→</span>
     </div>
   </section>
 
+  <!-- Chat Modal -->
+  <div id="chatModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden z-50">
+    <div class="bg-white rounded-2xl shadow-xl w-96 p-6 relative">
+      <button onclick="document.getElementById('chatModal').classList.add('hidden')" 
+              class="absolute top-2 right-3 text-gray-500 hover:text-gray-800">✕</button>
+      <h4 class="font-bold text-lg mb-4">ChatGABV</h4>
+      <div class="bg-gray-100 p-3 rounded-xl mb-4 text-left text-gray-700">
+        <p><strong>You:</strong> What is the main goal of a bank?</p>
+      </div>
+      <div class="bg-blue-50 p-3 rounded-xl mb-4 text-left text-gray-700">
+        <p><strong>ChatGABV:</strong> At its core, the goal of a bank should be to serve people and communities — enabling financial well-being, supporting businesses, and creating positive impact, not just profit.</p>
+      </div>
+      <input type="text" placeholder="Type your question..." 
+             class="w-full border rounded-xl px-3 py-2 focus:outline-none focus:ring focus:ring-blue-300"/>
+    </div>
+  </div>
+
   <!-- Banking on Values Day Section -->
-  <section id="bovd" class="bg-white text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
+  <section id="bovd" class="bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa3XKtJBWXwTAt9zzGuTeLuq4LeRZwnsjH-g&s" alt="Banking on Values Illustration" class="h-16 mb-4">
 
     <h3 class="text-4xl font-bold mb-6">Banking on Values Day</h3>
@@ -99,19 +117,28 @@
   </section>
 
   <!-- Why It Matters Section -->
-  <section id="why" class="bg-gray-100 py-16 flex flex-col justify-center items-center">
+  <section id="why" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
     <div class="max-w-4xl mx-auto text-center px-4">
       <h3 class="text-4xl font-bold mb-6">Why It Matters</h3>
-      <p class="text-xl leading-relaxed mb-8">
+      <p class="text-xl leading-relaxed mb-12">
         Banking On Values Day brings together a global movement for positive transformation.<br/>
         Driven by the Global Alliance for Banking on Values (GABV).
       </p>
 
       <!-- Quick Facts -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="bg-white rounded-xl shadow p-6">Quick Fact 1</div>
-        <div class="bg-white rounded-xl shadow p-6">Quick Fact 2</div>
-        <div class="bg-white rounded-xl shadow p-6">Quick Fact 3</div>
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+          <span class="text-5xl font-extrabold text-blue-600 mb-2">70%</span>
+          <p class="text-gray-700">of people want their bank to focus on sustainability.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+          <span class="text-5xl font-extrabold text-blue-600 mb-2">1.4B</span>
+          <p class="text-gray-700">adults worldwide remain unbanked and underserved.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+          <span class="text-5xl font-extrabold text-blue-600 mb-2">90%</span>
+          <p class="text-gray-700">of banks prioritize profit over community well-being.</p>
+        </div>
       </div>
 
       <!-- Member Highlights -->
@@ -143,17 +170,17 @@
   </section>
 
   <!-- Call to Action -->
-  <section id="cta" class="bg-blue-600 text-white py-16 text-center flex flex-col justify-center items-center">
-    <h3 class="text-4xl font-bold mb-4">How to Shape AI</h3>
+  <section id="cta" class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white py-20 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-bold mb-6">How to Shape AI</h3>
     <p class="text-xl max-w-2xl mx-auto mb-8">
       Let's teach AI what banking can really mean — and inspire others to join us.
     </p>
-    <ul class="list-disc list-inside text-lg mb-6 max-w-xl text-left">
-      <li>Action 1: </li>
-      <li>Action 2: </li>
-      <li>Action 3: </li>
+    <ul class="list-disc list-inside text-lg mb-8 max-w-xl text-left space-y-2">
+      <li>Share your perspective on what values in banking mean to you.</li>
+      <li>Join community discussions and workshops around ethical AI.</li>
+      <li>Spread the word — invite others to explore values-led banking.</li>
     </ul>
-    <a href="https://your-guide-link" class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl shadow hover:scale-105 transition mb-4">
+    <a href="https://your-guide-link" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow hover:scale-105 transition mb-4">
       Read the Guide
     </a>
     <a href="https://your-values-banking-link" class="underline text-white">Find out about values-led banking</a>
