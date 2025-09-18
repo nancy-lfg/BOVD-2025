@@ -1,156 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChatGABV</title>
-<style>
-  /* Reset & base styles */
-  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-  html, body { height: 100%; }
-  body { overflow-x: hidden; }
-
-  /* Snap scrolling */
-  section { height: 100vh; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem; }
-  main { scroll-snap-type: y mandatory; overflow-y: scroll; height: 100vh; }
-
-  /* Navbar */
-  nav { position: fixed; top: 0; width: 100%; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-  nav img { height: 40px; }
-  nav ul { list-style: none; display: flex; gap: 2rem; }
-  nav ul li { font-weight: 600; color: #1a374d; cursor: pointer; transition: color 0.3s; }
-  nav ul li:hover { color: #40916c; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOVD Microsite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      scroll-snap-type: y mandatory;
+    }
+    section {
+      scroll-snap-align: start;
+      min-height: 100vh;
+    }
+  </style>
 </head>
-<body>
-<nav>
-  <img src="data:image/png;base64,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" alt="ChatGABV Logo">
-  <ul>
-    <li><a href="#hero">Home</a></li>
-    <li><a href="#why">Why it Matters</a></li>
-    <li><a href="#banking">Banking for Good</a></li>
-    <li><a href="#footer">Contact</a></li>
-  </ul>
-</nav>
-<main>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold tracking-tight">BOVD</h1>
+      <nav class="space-x-6 text-lg">
+        <a href="#hero" class="hover:text-blue-600">Home</a>
+        <a href="#bovd" class="hover:text-blue-600">Banking on Values Day</a>
+        <a href="#film" class="hover:text-blue-600">Watch the Film</a>
+        <a href="#why" class="hover:text-blue-600">Why It Matters</a>
+        <a href="#highlights" class="hover:text-blue-600">Highlights</a>
+        <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
   <!-- Hero Section -->
-  <section id="hero" style="background: linear-gradient(to bottom right, #d0f0ea, #a8e6cf); color: #1a374d; text-align: center;">
-    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Welcome to ChatGABV</h1>
-    <p style="font-size: 1.5rem; max-width: 700px; margin: 0 auto 2rem auto;">Empowering your finances to create a better world. Engage, learn, and grow with sustainable banking insights tailored just for you.</p>
-    <a href="#why" style="display: inline-block; padding: 1rem 2rem; background-color: #40916c; color: white; border-radius: 50px; font-weight: 600; text-decoration: none; transition: background 0.3s;">Learn More</a>
-  </section>
-
-  <!-- Small Nature Accent Section -->
-  <section style="background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover; color: white; text-shadow: 0 2px 5px rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center;">
-    <h2 style="font-size: 2.5rem; text-align: center; background: rgba(0,0,0,0.3); padding: 1rem 2rem; border-radius: 20px;">Banking with a Nature-First Approach</h2>
-  </section>
-<!-- Chunk 3: Why it Matters + Banking for Good Around the World -->
-<section id="why-it-matters" class="snap-section bg-soft-green-blue p-16">
-  <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8">Why it Matters</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="quick-fact p-6 bg-white rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Quick Fact 1</h3>
-        <p class="text-gray-700">Values-based banking prioritizes social and environmental impact alongside financial performance.</p>
-      </div>
-      <div class="quick-fact p-6 bg-white rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Quick Fact 2</h3>
-        <p class="text-gray-700">It helps communities access fair and transparent banking services.</p>
-      </div>
-      <div class="quick-fact p-6 bg-white rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Quick Fact 3</h3>
-        <p class="text-gray-700">Encourages innovation in sustainable financial products and solutions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="banking-for-good" class="snap-section bg-soft-blue p-16">
-  <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8">Banking for Good Around the World</h2>
-    <div class="grid md:grid-cols-3 gap-8 mb-8">
-      <div class="bank-case bg-white rounded-xl shadow-lg p-4">
-        <img src="https://www.gabv.org/wp-content/uploads/2023/11/BH-3-1536x863.jpg" alt="Bank Case 1" class="rounded-lg mb-4">
-        <h3 class="font-semibold text-lg">Example Bank 1</h3>
-        <p class="text-gray-700">Supports local renewable energy projects and community initiatives.</p>
-      </div>
-      <div class="bank-case bg-white rounded-xl shadow-lg p-4">
-        <img src="https://www.gabv.org/wp-content/uploads/2023/10/Zwei-Manner-mit-einer-Kiste-Tomaten.jpg" alt="Bank Case 2" class="rounded-lg mb-4">
-        <h3 class="font-semibold text-lg">Example Bank 2</h3>
-        <p class="text-gray-700">Provides affordable loans to small businesses with social impact missions.</p>
-      </div>
-      <div class="bank-case bg-white rounded-xl shadow-lg p-4">
-        <img src="https://www.gabv.org/wp-content/uploads/2023/10/Porterville-BSB-Portraits-2023-215-1536x1024.jpg" alt="Bank Case 3" class="rounded-lg mb-4">
-        <h3 class="font-semibold text-lg">Example Bank 3</h3>
-        <p class="text-gray-700">Innovates financial products aimed at reducing environmental footprint.</p>
-      </div>
-    </div>
-    <p class="text-sm text-gray-600 max-w-3xl mx-auto">
-      Values-based banks work to intentionally drive and create positive change. They innovate banking products and services and engage with partners to provide solutions to social and environmental issues in the communities they serve. Here are some examples of best practices.
+  <section id="hero" class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white flex flex-col justify-center items-center">
+    <h2 class="text-5xl font-extrabold mb-6">Welcome to ChatGABV</h2>
+    <p class="max-w-2xl mx-auto text-xl mb-6">
+      Our smartest model. Great for re-imagining the future.<br/>
+      Explore different perspectives on how our world could work.
     </p>
-  </div>
-</section>
-  <!-- Chunk 4: AI & Values-Led Banking + Footer + Snap Scroll CSS -->
-<section id="ai-banking" class="snap-section bg-soft-green p-16">
-  <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-8">AI & Values-Led Banking</h2>
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="text-gray-700 mb-4">
-          Artificial Intelligence can help values-led banks better serve communities, reduce environmental impact, and innovate products while remaining transparent and ethical.
-        </p>
-        <p class="text-gray-700">
-          From predictive lending that considers social outcomes, to optimizing sustainable investment portfolios, AI enhances how banks create positive change.
-        </p>
+    <a href="#bovd" class="inline-block px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl shadow hover:scale-105 transition">
+      Learn More ↓
+    </a>
+  </section>
+
+  <!-- Banking on Values Day Section -->
+  <section id="bovd" class="bg-white text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
+    <h3 class="text-4xl font-bold mb-6">Banking on Values Day</h3>
+    <p class="text-xl max-w-3xl mb-8">
+      Banking On Values Day brings together a global movement for positive transformation.<br/>
+      Driven by the Global Alliance for Banking on Values (GABV).
+    </p>
+    <h2 class="text-5xl font-extrabold mb-6">BOVD 2025</h2>
+    <div class="max-w-3xl mb-6">
+      <h4 class="text-2xl font-semibold mb-4">ChatGABV: Help AI Rethink Banking</h4>
+      <p class="mb-4">
+        AI needs to see and learn new ways of doing banking. Otherwise, it can keep us stuck in the status quo of profit over people.
+      </p>
+      <p class="mb-4 font-semibold">There is a different way.</p>
+      <p class="mb-4">
+        We can shape AI so it learns that banking can be different from the past. To see a future which already exists, where the goal of banking is to serve our collective needs.
+      </p>
+      <p class="mb-4">
+        Once we help AI see the future, then other people can see it too. And join our work toward a better world.
+      </p>
+      <p class="mb-4 font-semibold">
+        Let’s teach AI what banking can really mean.
+      </p>
+      <p class="italic text-blue-600">#ChatGABV</p>
+    </div>
+    <a href="https://www.gabv.org/ethical-ai" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl shadow hover:scale-105 transition">
+      Find out more
+    </a>
+  </section>
+
+  <!-- Film Section -->
+  <section id="film" class="max-w-4xl mx-auto py-16 px-4 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-bold mb-6">Watch the Film</h3>
+    <div class="aspect-video rounded-xl overflow-hidden shadow w-full">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" title="BOVD Film" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section id="why" class="bg-gray-100 py-16 flex flex-col justify-center items-center">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h3 class="text-4xl font-bold mb-6">Why It Matters</h3>
+      <p class="text-xl leading-relaxed">
+        Banking On Values Day brings together a global movement for positive transformation.<br/>
+        Driven by the Global Alliance for Banking on Values (GABV).
+      </p>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section id="highlights" class="max-w-6xl mx-auto py-16 px-4 flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-bold text-center mb-10">Banking for Good Around the World</h3>
+    <div class="grid gap-8 md:grid-cols-3 w-full">
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <img src="https://www.gabv.org/wp-content/uploads/2023/11/BH-3-1536x863.jpg" alt="Triodos Bank" class="rounded-xl mb-4 w-full object-cover h-48">
+        <h4 class="font-bold text-xl mb-2">Triodos Bank, UK</h4>
+        <p class="text-gray-600">Support for nature-based investment projects.</p>
       </div>
-      <div>
-        <img src="ai-banking.jpg" alt="AI in banking" class="rounded-xl shadow-lg">
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <img src="https://www.gabv.org/wp-content/uploads/2023/10/Zwei-Manner-mit-einer-Kiste-Tomaten.jpg" alt="Freie Gemeinschaftsbank" class="rounded-xl mb-4 w-full object-cover h-48">
+        <h4 class="font-bold text-xl mb-2">Freie Gemeinschaftsbank, CH</h4>
+        <p class="text-gray-600">Pay what you want: customers decide their own fees.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <img src="https://www.gabv.org/wp-content/uploads/2023/10/Porterville-BSB-Portraits-2023-215-1536x1024.jpg" alt="Beneficial State Bank" class="rounded-xl mb-4 w-full object-cover h-48">
+        <h4 class="font-bold text-xl mb-2">Beneficial State Bank</h4>
+        <p class="text-gray-600">Helping immigrants get access to credit.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="bg-white p-8 text-center">
-  <p class="text-gray-600">&copy; 2025 Your Company Name. All rights reserved.</p>
-</footer>
+  <!-- Call to Action -->
+  <section id="cta" class="bg-blue-600 text-white py-16 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-bold mb-4">Shape the Future of AI</h3>
+    <p class="text-xl max-w-2xl mx-auto mb-8">
+      Let's teach AI what banking can really mean — and inspire others to join us.
+    </p>
+    <a href="https://your-guide-link" class="px-8 py-4 bg-white text-blue-600 font-bold rounded-xl shadow hover:scale-105 transition">
+      Read the Guide
+    </a>
+  </section>
 
-<!-- Scroll Snap CSS (add in <style> or external CSS) -->
-<style>
-html, body {
-  height: 100%;
-  margin: 0;
-  scroll-behavior: smooth;
-}
-
-body {
-  scroll-snap-type: y mandatory;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom right, #e0f7f5, #d9f0ff);
-  color: #333;
-}
-
-.snap-section {
-  scroll-snap-align: start;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.bg-soft-green { background-color: #dffaf1; }
-.bg-soft-blue { background-color: #e0f7ff; }
-.bg-soft-green-blue { background: linear-gradient(135deg, #dffaf1 0%, #e0f7ff 100%); }
-
-h2 { color: #045d56; }
-.quick-fact h3, .bank-case h3 { color: #023e3e; }
-p { line-height: 1.6; }
-.shadow-lg { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-.rounded-xl { border-radius: 1rem; }
-</style>
-
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6">
+    © 2025 BOVD Microsite · Co-created with AI
+  </footer>
+</body>
+</html>
