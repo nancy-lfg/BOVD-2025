@@ -6,16 +6,9 @@
   <title>BOVD Microsite</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      scroll-snap-type: y mandatory;
-    }
-    section {
-      scroll-snap-align: start;
-      min-height: 100vh;
-    }
+    html { scroll-behavior: smooth; }
+    body { scroll-snap-type: y mandatory; }
+    section { scroll-snap-align: start; min-height: 100vh; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -46,8 +39,7 @@
     <div class="bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
 
       <!-- Question 1 -->
-      <div id="q1" class="">
-        <!-- Preprogrammed Question -->
+      <div id="q1">
         <div id="q1Card" class="mb-6">
           <p class="text-left font-semibold text-gray-700 mb-2">Question:</p>
           <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
@@ -56,7 +48,6 @@
           </div>
         </div>
 
-        <!-- Typing Indicator -->
         <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
           <span class="text-sm text-gray-500">ChatGABV is thinking</span>
           <div class="flex space-x-1">
@@ -66,7 +57,6 @@
           </div>
         </div>
 
-        <!-- Response Screen -->
         <div id="q1Responses" class="hidden">
           <!-- Top Bar -->
           <div class="flex justify-between items-start mb-6">
@@ -78,39 +68,34 @@
               What is the main goal of a bank?
             </div>
           </div>
-
-          <!-- Title & Instructions -->
+          <!-- Title -->
           <div class="text-center mb-8">
             <h2 class="text-xl font-bold mb-2">You’re giving feedback on ChatGABV.</h2>
             <p class="text-sm text-gray-600">Which response do you prefer? <br/>Responses may take a moment to load.</p>
           </div>
-
           <!-- Responses -->
           <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
               <div>
                 <h4 class="font-bold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500">(Business as Usual)</span></h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability and regulatory compliance.</p>
+                <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
                 <ul class="list-disc list-inside text-sm mb-3 space-y-1">
                   <li>Accepting deposits from customers.</li>
                   <li>Lending money at higher interest rates than it pays on deposits.</li>
                   <li>Providing financial services like investments, payments, and currency exchange.</li>
                 </ul>
-                <p class="text-sm">A bank’s main goal is to achieve strong financial returns and maintain competitive market positions.</p>
               </div>
               <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 hover:bg-gray-900">I prefer this response</button>
             </div>
-
             <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
               <div>
                 <h4 class="font-bold mb-2">Response 2 – ChatGABV</h4>
                 <p class="text-sm mb-3">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
                 <ul class="list-disc list-inside text-sm mb-3 space-y-1">
                   <li>Balancing profit with purpose.</li>
-                  <li>Using finance to support sustainable development, community empowerment, and environmental protection.</li>
-                  <li>Building long-term relationships with communities and customers.</li>
+                  <li>Using finance to support sustainable development and community empowerment.</li>
+                  <li>Building long-term relationships with customers.</li>
                 </ul>
-                <p class="text-sm">Banks measure success not just by financial returns, but by their positive impact on people & the planet.</p>
               </div>
               <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 hover:bg-green-700">I prefer this response</button>
             </div>
@@ -146,7 +131,70 @@
     </div>
   </section>
 
-  <!-- Other sections (BOVD, Film, Why, CTA, Footer) would follow here, unchanged from previous version -->
+  <!-- Banking on Values Day -->
+  <section id="bovd" class="bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
+    <h3 class="text-4xl font-bold mb-6">Banking on Values Day</h3>
+    <p class="text-lg max-w-3xl mb-4">
+      Banking On Values Day brings together a global movement for positive transformation.<br/>
+      Driven by the Global Alliance for Banking on Values (GABV).
+    </p>
+    <h2 class="text-5xl font-extrabold mb-6">BOVD 2025</h2>
+    <p class="max-w-3xl mb-4">AI needs to see and learn new ways of doing banking. Otherwise, it can keep us stuck in the status quo of profit over people.</p>
+    <p class="mb-4 font-semibold">There is a different way.</p>
+    <p class="max-w-3xl mb-4">We can shape AI so it learns that banking can be different from the past, where the goal of banking is to serve our collective needs.</p>
+    <p class="max-w-3xl mb-4">Once we help AI see the future, then other people can see it too.</p>
+    <p class="mb-4 font-semibold">Let’s teach AI what banking can really mean.</p>
+    <p class="italic text-blue-600">#ChatGABV</p>
+  </section>
+
+  <!-- Film -->
+  <section id="film" class="max-w-4xl mx-auto py-16 px-4 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-bold mb-6">Watch the Film</h3>
+    <div class="aspect-video rounded-xl overflow-hidden shadow w-full">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" title="BOVD Film" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section id="why" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
+    <div class="max-w-4xl mx-auto text-center px-4">
+      <h3 class="text-4xl font-bold mb-6">Why It Matters</h3>
+      <p class="text-xl leading-relaxed mb-12">
+        Banking On Values Day brings together a global movement for positive transformation.<br/>
+        Driven by the Global Alliance for Banking on Values (GABV).
+      </p>
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+          <span class="text-5xl font-extrabold text-blue-600 mb-2">70%</span>
+          <p class="text-gray-700">of people want their bank to focus on sustainability.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+          <span class="text-5xl font-extrabold text-blue-600 mb-2">1.4B</span>
+          <p class="text-gray-700">adults worldwide remain unbanked and underserved.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
+          <span class="text-5xl font-extrabold text-blue-600 mb-2">90%</span>
+          <p class="text-gray-700">of banks prioritize profit over community well-being.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white py-20 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-bold mb-6">How to Shape AI</h3>
+    <p class="text-xl max-w-2xl mx-auto mb-8">Let's teach AI what banking can really mean — and inspire others to join us.</p>
+    <ul class="list-disc list-inside text-lg mb-8 max-w-xl text-left space-y-2">
+      <li>Share your perspective on what values in banking mean to you.</li>
+      <li>Join community discussions and workshops around ethical AI.</li>
+      <li>Spread the word — invite others to explore values-led banking.</li>
+    </ul>
+    <a href="#" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow hover:scale-105 transition mb-4">Read the Guide</a>
+    <a href="#" class="underline text-white">Find out about values-led banking</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6">© 2025 BOVD Microsite · Co-created with AI</footer>
 
   <script>
     function showResponses(q) {
@@ -157,10 +205,10 @@
         document.getElementById(q + 'Responses').classList.remove('hidden');
       }, 2000);
     }
-
     function nextQuestion(current, next) {
       document.getElementById(current).classList.add('hidden');
       document.getElementById(next).classList.remove('hidden');
+      document.getElementById(next + 'Card').scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 </body>
