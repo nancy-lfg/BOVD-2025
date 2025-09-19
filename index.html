@@ -27,7 +27,7 @@
 
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
       <a href="/" onclick="window.location.reload(); return false;">
         <img src="https://raw.githubusercontent.com/nancy-lfg/BOVD-2025/main/Untitled%20design%20(1).png" 
              alt="Custom Logo" 
@@ -36,25 +36,24 @@
       </a>
       <!-- ✅ Nav fonts changed (uppercase, tracking-wide) -->
       <nav class="space-x-6 text-sm uppercase tracking-wide font-medium">
-        <a href="#hero" class="hover:text-blue-600">ChatGABV</a>
-        <a href="#bovd" class="hover:text-blue-600">Banking on Values Day</a>
-        <a href="#film" class="hover:text-blue-600">Watch the Film</a>
-        <a href="#why" class="hover:text-blue-600">Why It Matters</a>
-        <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Get Involved</a>
-      </nav>
+      <a href="#hero" class="hover:text-blue-600">ChatGABV</a>
+      <a href="#film" class="hover:text-blue-600">Watch the Film</a>
+      <a href="#why" class="hover:text-blue-600">Why It Matters</a>
+      <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Get Involved</a>
+        </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white flex flex-col justify-center items-center">
-    <div class="max-w-4xl w-full text-center mb-8">
-      <h2 class="text-5xl font-extrabold mb-4">Welcome to ChatGABV</h2>
-      <p class="text-xl mb-2">Our smartest model. Great for re-imagining the future.</p>
-      <p class="text-lg">Explore different perspectives on how our world could work.</p>
-    </div>
+<section id="hero" class="py-20 bg-gradient-to-r from-green-400 via-green-900 to-green-400 text-white flex flex-col justify-center items-center">
+  <div class="max-w-4xl w-full text-center mb-8">
+    <h2 class="text-5xl font-extrabold mb-4">Welcome to ChatGABV</h2>
+    <p class="text-xl mb-2">Our smartest model. Great for re-imagining the future.</p>
+    <p class="text-lg">Explore different perspectives on how our world could work.</p>
+  </div>
 
     <!-- Chat container -->
-    <!-- ✅ Restored original Hero Chat -->
+    <!-- Restored original Hero Chat -->
     <div class="bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
       <!-- Question 1 -->
       <div id="q1">
@@ -143,40 +142,48 @@
     </div>
   </section>
 
-  <!-- Banking on Values Day -->
-  <section id="bovd" class="bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiuBJAQ_vD-gJydAYjH2Vm5RhLYjxl7ya0MFiq9sAgcysiRqmuHNwi0jknM1f3YPLZIaE&usqp=CAU" alt="Global Alliance for Banking on Values Logo" class="h-20 mb-6 mx-auto">
-    <div class="mb-8">
-      <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
-      <div class="w-8 h-0.5 bg-gray-400 mx-auto mb-4"></div>
-      <h2 class="text-3xl sm:text-4xl font-taviraj-light mb-4">
-        <span class="text-blue-600">ChatGABV:</span>
-          <span class="italic"> Help AI Rethink Banking</span>
-     </h2>
-
-    </div>
-    <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-800">
+<!-- Combined BOVD + Film Section -->
+<section id="film" class="grid md:grid-cols-2 min-h-screen">
+  
+  <!-- Left: BOVD Content -->
+  <div class="bg-white text-gray-900 flex flex-col justify-center items-center py-16 px-8">
+    <img src="https://www.gabv.org/wp-content/uploads/2021/08/GABV-Logo-300x176.png" 
+         alt="Global Alliance for Banking on Values Logo" 
+         class="h-20 mb-6">
+    <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
+    <div class="w-8 h-0.5 bg-gray-400 mb-4"></div>
+    <h2 class="text-3xl sm:text-4xl font-taviraj-light mb-6">
+      <span class="text-blue-600">ChatGABV:</span>
+      <span class="italic"> Help AI Rethink Banking</span>
+    </h2>
+    <div class="max-w-md text-lg leading-relaxed">
       <p class="mb-4">
         AI needs to see and learn new ways of doing banking.<br/>
         Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
       </p>
-    </div>
-    <div class="max-w-3xl mx-auto mt-6 space-y-4 text-gray-800">
-      <p class="font-semibold">There is a different way.</p>
-      <p>We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
-      <p>Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
+      <p class="mb-4 font-semibold">There is a different way.</p>
+      <p class="mb-4">We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
+      <p class="mb-4">Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
       <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
-      <p class="italic text-blue-600">#ChatGABV</p>
+      <p class="italic text-blue-600 mt-4">#ChatGABV</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Film -->
-  <section id="film" class="max-w-4xl mx-auto py-16 px-4 text-center flex flex-col justify-center items-center">
-    <h3 class="text-4xl font-taviraj-light mb-6">Watch the Film</h3>
-    <div class="aspect-video rounded-xl overflow-hidden shadow w-full">
-      <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" title="BOVD Film" frameborder="0" allowfullscreen></iframe>
+  <!-- Right: Film Embed -->
+  <div class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white flex justify-center items-center py-16 px-8">
+    <div class="w-full max-w-2xl">
+      <h3 class="text-4xl font-taviraj-light mb-6 text-center">Watch the Film</h3>
+      <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+        <iframe class="w-full h-full" 
+                src="https://www.youtube.com/embed/your-video-id" 
+                title="BOVD Film" 
+                frameborder="0" 
+                allowfullscreen></iframe>
+      </div>
     </div>
-  </section>
+  </div>
+
+</section>
 
   <!-- Why It Matters -->
   <section id="why" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
@@ -188,15 +195,15 @@
       </p>
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-extrabold text-blue-600 mb-2">70%</span>
+          <span class="text-5xl font-extrabold text-orange-400 mb-2">70%</span>
           <p class="text-gray-700">of people want their bank to focus on sustainability.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-extrabold text-blue-600 mb-2">1.4B</span>
+          <span class="text-5xl font-extrabold text-orange-400 mb-2">1.4B</span>
           <p class="text-gray-700">adults worldwide remain unbanked and underserved.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-extrabold text-blue-600 mb-2">90%</span>
+          <span class="text-5xl font-extrabold text-orange-400 mb-2">90%</span>
           <p class="text-gray-700">of banks prioritize profit over community well-being.</p>
         </div>
       </div>
