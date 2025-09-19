@@ -50,26 +50,26 @@
   <h2 class="text-5xl font-extrabold mb-2">Welcome to ChatGABV</h2>
   
   <!-- Tiny grey text -->
-  <p class="text-sm text-gray-300 mb-6 font-taviraj">
+  <p class="text-sm text-gray-300 mb-6">
     Our smartest model. Great for re-imagining the future.
   </p>
   
   <!-- Supporting lines -->
-  <p class="text-xl mb-2 font-taviraj">
+  <p class="text-xl mb-2">
     The AI which reflects the most up-to-date version of banking.
   </p>
-  <p class="text-lg font-taviraj">
+  <p class="text-lg">
     Want to see what it knows, and help it teach the world?
   </p>
   
   <!-- Space before CTA -->
-  <div class="mt-6">
-    <!-- CTA line (bold) -->
-    <p class="text-lg font-bold font-taviraj">
+  <div class="mt-10">
+    <!-- CTA line (bold + larger) -->
+    <p class="text-2xl font-bold">
       Ask me about banking. Ready when you are.
     </p>
-    <!-- Secondary note (normal) -->
-    <p class="text-md font-taviraj mt-1">
+    <!-- Secondary note (slightly larger + lighter color) -->
+    <p class="text-lg text-gray-200 mt-2">
       Click the arrow (if you’re curious).
     </p>
   </div>
@@ -169,27 +169,36 @@
 <!-- Combined BOVD + Film Section -->
 <section id="film" class="grid md:grid-cols-2 min-h-screen">
   
-  <!-- Left: BOVD Content -->
-  <div class="bg-white text-gray-900 flex flex-col justify-center items-center py-16 px-8">
-    <img src="https://www.gabv.org/wp-content/uploads/2021/08/GABV-Logo-300x176.png" 
-         alt="Global Alliance for Banking on Values Logo" 
-         class="h-20 mb-6">
-    <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
-    <div class="w-8 h-0.5 bg-gray-400 mb-4"></div>
-    <h2 class="text-3xl sm:text-4xl font-taviraj-light mb-6">
-      <span class="text-blue-600">ChatGABV:</span>
-      Help AI Rethink Banking
-    </h2>
-    <div class="max-w-md text-lg leading-relaxed">
-      <p class="mb-4">
-        AI needs to see and learn new ways of doing banking.<br/>
-        Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
-      </p>
-      <p class="mb-4 font-semibold">There is a different way.</p>
-      <p class="mb-4">We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
-      <p class="mb-4">Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
-      <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
-      <p class="italic text-blue-600 mt-4">#ChatGABV</p>
+  <!-- Left: BOVD Content with faded green bubbles -->
+  <div class="bg-white relative flex flex-col justify-center items-center py-16 px-8">
+    <!-- Background bubbles -->
+    <div class="absolute inset-0 bg-no-repeat bg-cover opacity-30"
+         style="background-image: url('https://www.gabv.org/wp-content/uploads/2021/06/bg-shapes.svg');
+                filter: hue-rotate(90deg) saturate(0.7);">
+    </div>
+
+    <!-- Content wrapper (sits above bubbles) -->
+    <div class="relative z-10 text-center">
+      <img src="https://www.gabv.org/wp-content/uploads/2021/08/GABV-Logo-300x176.png" 
+           alt="Global Alliance for Banking on Values Logo" 
+           class="h-20 mb-6 mx-auto">
+      <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
+      <div class="w-8 h-0.5 bg-gray-400 mx-auto mb-4"></div>
+      <h2 class="text-3xl sm:text-4xl font-taviraj-light mb-6">
+        <span class="text-blue-600">ChatGABV:</span>
+        Help AI Rethink Banking
+      </h2>
+      <div class="max-w-md text-lg leading-relaxed mx-auto">
+        <p class="mb-4">
+          AI needs to see and learn new ways of doing banking.<br/>
+          Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
+        </p>
+        <p class="mb-4 font-semibold">There is a different way.</p>
+        <p class="mb-4">We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
+        <p class="mb-4">Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
+        <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
+        <p class="italic text-blue-600 mt-4">#ChatGABV</p>
+      </div>
     </div>
   </div>
 
@@ -208,6 +217,7 @@
   </div>
 
 </section>
+
 
   <!-- Why It Matters -->
   <section id="why" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
