@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BOVD Microsite</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Import Roboto font (all weights needed) -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Import Roboto + Taviraj -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Taviraj:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     html { scroll-behavior: smooth; }
-    body { scroll-snap-type: y mandatory; font-family: 'Roboto', sans-serif; }
+    body { 
+      scroll-snap-type: y mandatory; 
+      font-family: 'Roboto', sans-serif; 
+    }
     section { scroll-snap-align: start; min-height: 100vh; }
+    .font-taviraj { font-family: 'Taviraj', serif; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -20,159 +26,20 @@
     <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
       <a href="/" onclick="window.location.reload(); return false;">
         <img src="https://d1c2gz5q23tkk0.cloudfront.net/assets/networks/1403/avatar/3cd7fe91fcfb567686d9762c52a3b07b-large.?1629194713" 
-           alt="BOVD Logo" 
-           class="h-10 w-auto">
+             alt="BOVD Logo" 
+             class="h-10 w-auto cursor-pointer">
       </a>
-      <nav class="space-x-6 text-lg font-medium">
-        <a href="#hero" class="hover:text-blue-600">ChatGABV</a>
-        <a href="#bovd" class="hover:text-blue-600">Banking on Values Day</a>
-        <a href="#film" class="hover:text-blue-600">Watch the Film</a>
-        <a href="#why" class="hover:text-blue-600">Why It Matters</a>
-        <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Get Involved</a>
+      <nav class="space-x-6 text-sm uppercase tracking-wide font-medium">
+        <a href="#hero" class="hover:text-green-600">ChatGABV</a>
+        <a href="#bovd" class="hover:text-green-600">BOVD 2025</a>
+        <a href="#film" class="hover:text-green-600">Watch the Film</a>
+        <a href="#why" class="hover:text-green-600">Why It Matters</a>
+        <a href="#cta" class="hover:text-green-600 font-bold text-green-700">Get Involved</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section as Interactive Chat -->
-  <section id="hero" class="py-20 bg-gradient-to-r from-[#0b3d2e] via-[#146b3a] to-[#1fa463] text-white flex flex-col justify-center items-center">
-
-    <div class="max-w-4xl w-full text-center mb-8">
-      <h2 class="text-5xl font-black mb-4">Welcome to ChatGABV</h2>
-      <p class="text-xl font-light mb-2">Our smartest model. Great for re-imagining the future.</p>
-      <p class="text-lg font-light">Explore different perspectives on how our world could work.</p>
-    </div>
-
-    <!-- Chat container -->
-    <div class="bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
-
-      <!-- Question 1 -->
-      <div id="q1">
-        <div id="q1Card" class="mb-6">
-          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
-          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
-            <span class="text-gray-700">What is the main goal of a bank?</span>
-            <button onclick="showResponses('q1')" class="ml-4 text-blue-600 font-bold">→</button>
-          </div>
-        </div>
-
-        <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
-          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
-          <div class="flex space-x-1">
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
-          </div>
-        </div>
-
-        <div id="q1Responses" class="hidden">
-          <!-- Top Bar -->
-          <div class="flex justify-between items-start mb-6">
-            <div>
-              <h3 class="font-bold text-lg">ChatGABV</h3>
-              <p class="text-sm text-gray-500 font-light">Our smartest model. Great for re-imagining the future</p>
-            </div>
-            <div class="bg-gray-100 px-4 py-2 rounded-xl text-gray-700 font-medium">
-              What is the main goal of a bank?
-            </div>
-          </div>
-          <!-- Title -->
-          <div class="text-center mb-8">
-            <h2 class="text-xl font-bold mb-2">You’re giving feedback on ChatGABV.</h2>
-            <p class="text-sm text-gray-600">Which response do you prefer? <br/>Responses may take a moment to load.</p>
-          </div>
-          <!-- Responses -->
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500">(Business as Usual)</span></h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
-                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
-                  <li>Accepting deposits from customers.</li>
-                  <li>Lending money at higher interest rates than it pays on deposits.</li>
-                  <li>Providing financial services like investments, payments, and currency exchange.</li>
-                </ul>
-              </div>
-              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 hover:bg-gray-900">I prefer this response</button>
-            </div>
-            <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold mb-2">Response 2 – ChatGABV</h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
-                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
-                  <li>Balancing profit with purpose.</li>
-                  <li>Using finance to support sustainable development and community empowerment.</li>
-                  <li>Building long-term relationships with customers.</li>
-                </ul>
-              </div>
-              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 hover:bg-green-700">I prefer this response</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Question 2 Placeholder -->
-      <div id="q2" class="hidden">
-        <div id="q2Card" class="mb-6">
-          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
-          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
-            <span class="text-gray-700">[Next question goes here...]</span>
-            <button onclick="showResponses('q2')" class="ml-4 text-blue-600 font-bold">→</button>
-          </div>
-        </div>
-        <div id="q2Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
-          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
-          <div class="flex space-x-1">
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
-          </div>
-        </div>
-        <div id="q2Responses" class="hidden">
-          <div class="text-center">
-            <h2 class="text-xl font-bold">Placeholder for Question 2 responses</h2>
-            <p class="text-sm text-gray-600">You can add new response cards here later.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BOVD Microsite</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Import Roboto font (all weights needed) -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    html { scroll-behavior: smooth; }
-    body { scroll-snap-type: y mandatory; font-family: 'Roboto', sans-serif; }
-    section { scroll-snap-align: start; min-height: 100vh; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-900">
-
-  <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <a href="/" onclick="window.location.reload(); return false;">
-        <img src="https://d1c2gz5q23tkk0.cloudfront.net/assets/networks/1403/avatar/3cd7fe91fcfb567686d9762c52a3b07b-large.?1629194713" 
-           alt="BOVD Logo" 
-           class="h-10 w-auto">
-      </a>
-      <nav class="space-x-6 text-lg font-medium">
-        <a href="#hero" class="hover:text-blue-600">ChatGABV</a>
-        <a href="#bovd" class="hover:text-blue-600">Banking on Values Day</a>
-        <a href="#film" class="hover:text-blue-600">Watch the Film</a>
-        <a href="#why" class="hover:text-blue-600">Why It Matters</a>
-        <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Get Involved</a>
-      </nav>
-    </div>
-  </header>
-
- <!-- Hero Section -->
+  <!-- Hero Section -->
   <section id="hero" class="relative py-20 bg-gradient-to-r from-[#1a1f4d] via-[#2d1b69] to-[#3b0a6f] text-white flex flex-col justify-center items-center overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none"></div>
 
@@ -182,171 +49,176 @@
       <p class="text-lg font-light">Explore different perspectives on how our world could work.</p>
     </div>
 
-    <!-- Chat container -->
-  <div class="relative z-10 bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
+   <!-- Chat container -->
+<div class="relative z-10 bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
 
-      <!-- Question 1 -->
-      <div id="q1">
-        <div id="q1Card" class="mb-6">
-          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
-          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
-            <span class="text-gray-700">What is the main goal of a bank?</span>
-            <button onclick="showResponses('q1')" class="ml-4 text-blue-600 font-bold">→</button>
-          </div>
+  <!-- Question 1 -->
+  <div id="q1">
+    <div id="q1Card" class="mb-6">
+      <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
+      <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
+        <span class="text-gray-700">What is the main goal of a bank?</span>
+        <button onclick="showResponses('q1')" class="ml-4 text-green-600 font-bold">→</button>
+      </div>
+    </div>
+
+    <!-- Typing dots -->
+    <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
+      <span class="text-sm text-gray-500">ChatGABV is thinking</span>
+      <div class="flex space-x-1">
+        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+      </div>
+    </div>
+
+    <!-- Responses -->
+    <div id="q1Responses" class="hidden">
+      <!-- Top Bar -->
+      <div class="flex justify-between items-start mb-6">
+        <div>
+          <h3 class="font-bold text-lg">ChatGABV</h3>
+          <p class="text-sm text-gray-500 font-light">Our smartest model. Great for re-imagining the future</p>
         </div>
-
-        <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
-          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
-          <div class="flex space-x-1">
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
-          </div>
-        </div>
-
-        <div id="q1Responses" class="hidden">
-          <!-- Top Bar -->
-          <div class="flex justify-between items-start mb-6">
-            <div>
-              <h3 class="font-bold text-lg">ChatGABV</h3>
-              <p class="text-sm text-gray-500 font-light">Our smartest model. Great for re-imagining the future</p>
-            </div>
-            <div class="bg-gray-100 px-4 py-2 rounded-xl text-gray-700 font-medium">
-              What is the main goal of a bank?
-            </div>
-          </div>
-          <!-- Title -->
-          <div class="text-center mb-8">
-            <h2 class="text-xl font-bold mb-2">You’re giving feedback on ChatGABV.</h2>
-            <p class="text-sm text-gray-600">Which response do you prefer? <br/>Responses may take a moment to load.</p>
-          </div>
-          <!-- Responses -->
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500">(Business as Usual)</span></h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
-                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
-                  <li>Accepting deposits from customers.</li>
-                  <li>Lending money at higher interest rates than it pays on deposits.</li>
-                  <li>Providing financial services like investments, payments, and currency exchange.</li>
-                </ul>
-              </div>
-              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 hover:bg-gray-900">I prefer this response</button>
-            </div>
-            <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold mb-2">Response 2 – ChatGABV</h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
-                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
-                  <li>Balancing profit with purpose.</li>
-                  <li>Using finance to support sustainable development and community empowerment.</li>
-                  <li>Building long-term relationships with customers.</li>
-                </ul>
-              </div>
-              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 hover:bg-green-700">I prefer this response</button>
-            </div>
-          </div>
+        <div class="bg-gray-100 px-4 py-2 rounded-xl text-gray-700 font-medium">
+          What is the main goal of a bank?
         </div>
       </div>
 
-      <!-- Question 2 Placeholder -->
-      <div id="q2" class="hidden">
-        <div id="q2Card" class="mb-6">
-          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
-          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
-            <span class="text-gray-700">[Next question goes here...]</span>
-            <button onclick="showResponses('q2')" class="ml-4 text-blue-600 font-bold">→</button>
+      <!-- Title -->
+      <div class="text-center mb-8">
+        <h2 class="text-xl font-bold mb-2">You’re giving feedback on ChatGABV.</h2>
+        <p class="text-sm text-gray-600">Which response do you prefer? <br/>Responses may take a moment to load.</p>
+      </div>
+
+      <!-- Responses Grid -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Response 1 -->
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500">(Business as Usual)</span></h4>
+            <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
+            <ul class="list-disc list-inside text-sm mb-3 space-y-1">
+              <li>Accepting deposits from customers.</li>
+              <li>Lending money at higher interest rates than it pays on deposits.</li>
+              <li>Providing financial services like investments, payments, and currency exchange.</li>
+            </ul>
           </div>
+          <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 hover:bg-gray-900">I prefer this response</button>
         </div>
-        <div id="q2Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
-          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
-          <div class="flex space-x-1">
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+
+        <!-- Response 2 -->
+        <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold mb-2">Response 2 – ChatGABV</h4>
+            <p class="text-sm mb-3">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
+            <ul class="list-disc list-inside text-sm mb-3 space-y-1">
+              <li>Balancing profit with purpose.</li>
+              <li>Using finance to support sustainable development and community empowerment.</li>
+              <li>Building long-term relationships with customers.</li>
+            </ul>
           </div>
-        </div>
-        <div id="q2Responses" class="hidden">
-          <div class="text-center">
-            <h2 class="text-xl font-bold">Placeholder for Question 2 responses</h2>
-            <p class="text-sm text-gray-600">You can add new response cards here later.</p>
-          </div>
+          <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 hover:bg-green-700">I prefer this response</button>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Question 2 Placeholder -->
+  <div id="q2" class="hidden">
+    <div id="q2Card" class="mb-6">
+      <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
+      <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
+        <span class="text-gray-700">[Next question goes here...]</span>
+        <button onclick="showResponses('q2')" class="ml-4 text-green-600 font-bold">→</button>
+      </div>
+    </div>
+
+    <!-- Typing dots -->
+    <div id="q2Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
+      <span class="text-sm text-gray-500">ChatGABV is thinking</span>
+      <div class="flex space-x-1">
+        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+        <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+      </div>
+    </div>
+
+    <!-- Placeholder Responses -->
+    <div id="q2Responses" class="hidden">
+      <div class="text-center">
+        <h2 class="text-xl font-bold">Placeholder for Question 2 responses</h2>
+        <p class="text-sm text-gray-600">You can add new response cards here later.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <!-- Banking on Values Day -->
+  <section id="bovd" class="bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
+    <!-- Logo -->
+    <img src="https://www.gabv.org/wp-content/uploads/2021/08/GABV-Logo-300x176.png" 
+         alt="Global Alliance for Banking on Values Logo" 
+         class="h-20 mb-6 mx-auto">
+
+    <!-- Heading Block -->
+    <div class="mb-8">
+      <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
+      <div class="w-8 h-0.5 bg-gray-400 mx-auto mb-4"></div>
+      <h2 class="text-3xl sm:text-4xl font-taviraj font-bold">
+        <span class="text-green-600">ChatGABV:</span>
+        <span class="italic font-extrabold"> Help AI Rethink Banking</span>
+      </h2>
+    </div>
+
+    <!-- Subheading -->
+    <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-800">
+      <p class="mb-4">
+        AI needs to see and learn new ways of doing banking.<br/>
+        Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
+      </p>
+    </div>
+
+    <!-- Continue content -->
+    <div class="max-w-3xl mx-auto mt-6 space-y-4 text-gray-800">
+      <p class="font-semibold">There is a different way.</p>
+      <p>We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
+      <p>Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
+      <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
+      <p class="italic text-green-600">#ChatGABV</p>
+    </div>
   </section>
 
- 
-<!-- Banking on Values Day -->
-<section id="bovd" class="bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
-  
-  <!-- Logo -->
-  <img src="data:image/png;base64,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" alt="Global Alliance for Banking on Values Logo" class="h-20 mb-6">
+  <!-- Film -->
+  <section id="film" class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white py-12 px-4 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-taviraj font-bold mb-4">Watch the Film</h3>
+    <div class="aspect-video rounded-xl overflow-hidden shadow-lg w-full max-w-4xl">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-video-id" title="BOVD Film" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
 
-  <!-- Heading Block -->
-  <div class="mb-8">
-    <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
-    <div class="w-8 h-0.5 bg-gray-400 mx-auto mb-4"></div>
-    <h2 class="text-3xl sm:text-4xl font-bold">
-      <span class="text-blue-600">ChatGABV:</span>
-      <span class="italic font-extrabold"> Help AI Rethink Banking</span>
-    </h2>
-  </div>
-
-  <!-- Subheading -->
-  <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-800">
-    <p class="mb-4">
-      AI needs to see and learn new ways of doing banking.<br/>
-      Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
-    </p>
-  </div>
-
-  <!-- Continue with rest of BOVD content -->
-  <div class="max-w-3xl mx-auto mt-6 space-y-4 text-gray-800">
-    <p class="font-semibold">There is a different way.</p>
-    <p>We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
-    <p>Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
-    <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
-    <p class="italic text-blue-600">#ChatGABV</p>
-  </div>
-
-</section>
-  
-
-<!-- Film -->
-<section id="film" class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white max-w-full py-12 px-4 text-center flex flex-col justify-center items-center">
-  <h3 class="text-4xl font-bold mb-4">Watch the Film</h3>
-  <div class="aspect-video rounded-xl overflow-hidden shadow-lg w-full max-w-4xl">
-    <iframe class="w-full h-full" 
-            src="https://www.youtube.com/embed/your-video-id" 
-            title="BOVD Film" 
-            frameborder="0" 
-            allowfullscreen>
-    </iframe>
-  </div>
-</section>
-
-  <!-- Why It Matters + Member Highlights -->
+  <!-- Why It Matters -->
   <section id="why" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
     <div class="max-w-4xl mx-auto text-center px-4">
-      <h3 class="text-4xl font-bold mb-6">Why It Matters</h3>
+      <h3 class="text-4xl font-taviraj font-bold mb-6">Why It Matters</h3>
       <p class="text-xl font-light leading-relaxed mb-12">
         Banking On Values Day brings together a global movement for positive transformation.<br/>
         Driven by the Global Alliance for Banking on Values (GABV).
       </p>
+
       <!-- Quick Facts -->
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-black text-blue-600 mb-2">70%</span>
+          <span class="text-5xl font-black text-green-600 mb-2">70%</span>
           <p class="text-gray-700">of people want their bank to focus on sustainability.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-black text-blue-600 mb-2">1.4B</span>
+          <span class="text-5xl font-black text-green-600 mb-2">1.4B</span>
           <p class="text-gray-700">adults worldwide remain unbanked and underserved.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-black text-blue-600 mb-2">90%</span>
+          <span class="text-5xl font-black text-green-600 mb-2">90%</span>
           <p class="text-gray-700">of banks prioritize profit over community well-being.</p>
         </div>
       </div>
@@ -360,17 +232,17 @@
       </p>
 
       <div class="grid gap-8 md:grid-cols-3 w-full">
-        <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
           <img src="https://www.gabv.org/wp-content/uploads/2023/11/BH-3-1536x863.jpg" alt="Triodos Bank" class="rounded-xl mb-4 w-full object-cover h-48">
           <h4 class="font-bold text-xl mb-2">Triodos Bank, UK</h4>
           <p class="text-gray-600">Support for nature-based investment projects.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
           <img src="https://www.gabv.org/wp-content/uploads/2023/10/Zwei-Manner-mit-einer-Kiste-Tomaten.jpg" alt="Freie Gemeinschaftsbank" class="rounded-xl mb-4 w-full object-cover h-48">
           <h4 class="font-bold text-xl mb-2">Freie Gemeinschaftsbank, Switzerland</h4>
           <p class="text-gray-600">Pay what you want: customers decide their own fees.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
           <img src="https://www.gabv.org/wp-content/uploads/2023/10/Porterville-BSB-Portraits-2023-215-1536x1024.jpg" alt="Beneficial State Bank" class="rounded-xl mb-4 w-full object-cover h-48">
           <h4 class="font-bold text-xl mb-2">Beneficial State Bank</h4>
           <p class="text-gray-600">Helping immigrants get access to credit.</p>
@@ -380,20 +252,22 @@
   </section>
 
   <!-- CTA -->
-  <section id="cta" class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white py-20 text-center flex flex-col justify-center items-center">
-    <h3 class="text-4xl font-bold mb-6">How to Shape AI</h3>
+  <section id="cta" class="bg-gradient-to-r from-[#0b3d2e] via-[#146b3a] to-[#1fa463] text-white py-20 text-center flex flex-col justify-center items-center">
+    <h3 class="text-4xl font-taviraj font-bold mb-6">How to Shape AI</h3>
     <p class="text-xl font-light max-w-2xl mx-auto mb-8">Let's teach AI what banking can really mean — and inspire others to join us.</p>
     <ul class="list-disc list-inside text-lg mb-8 max-w-xl text-left space-y-2">
       <li>Share your perspective on what values in banking mean to you.</li>
       <li>Join community discussions and workshops around ethical AI.</li>
       <li>Spread the word — invite others to explore values-led banking.</li>
     </ul>
-    <a href="#" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow hover:scale-105 transition mb-4">Read the Guide</a>
+    <a href="#" class="px-8 py-4 bg-white text-green-700 font-bold rounded-xl shadow hover:bg-gray-100 transition mb-4">Read the Guide</a>
     <a href="#" class="underline text-white">Find out about values-led banking</a>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-gray-500 py-6">© 2025 BOVD Microsite · Co-created with AI</footer>
+  <footer class="bg-[#0a0f2c] text-gray-400 text-center py-6 text-sm">
+    © 2025 BOVD Microsite · Co-created with AI
+  </footer>
 
   <script>
     function showResponses(q) {
@@ -412,4 +286,3 @@
   </script>
 </body>
 </html>
-
