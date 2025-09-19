@@ -137,6 +137,146 @@
     </div>
   </section>
 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOVD Microsite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Import Roboto font (all weights needed) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { scroll-snap-type: y mandatory; font-family: 'Roboto', sans-serif; }
+    section { scroll-snap-align: start; min-height: 100vh; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="/" onclick="window.location.reload(); return false;">
+        <img src="https://d1c2gz5q23tkk0.cloudfront.net/assets/networks/1403/avatar/3cd7fe91fcfb567686d9762c52a3b07b-large.?1629194713" 
+           alt="BOVD Logo" 
+           class="h-10 w-auto">
+      </a>
+      <nav class="space-x-6 text-lg font-medium">
+        <a href="#hero" class="hover:text-blue-600">ChatGABV</a>
+        <a href="#bovd" class="hover:text-blue-600">Banking on Values Day</a>
+        <a href="#film" class="hover:text-blue-600">Watch the Film</a>
+        <a href="#why" class="hover:text-blue-600">Why It Matters</a>
+        <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Get Involved</a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- Hero Section -->
+  <section id="hero" class="relative py-20 bg-gradient-to-r from-[#1a1f4d] via-[#2d1b69] to-[#3b0a6f] text-white flex flex-col justify-center items-center overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-4xl w-full text-center mb-8">
+      <h2 class="text-5xl font-taviraj font-bold mb-4">Welcome to ChatGABV</h2>
+      <p class="text-xl font-light mb-2">Our smartest model. Great for re-imagining the future.</p>
+      <p class="text-lg font-light">Explore different perspectives on how our world could work.</p>
+    </div>
+
+    <!-- Chat container -->
+  <div class="relative z-10 bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
+
+      <!-- Question 1 -->
+      <div id="q1">
+        <div id="q1Card" class="mb-6">
+          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
+          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
+            <span class="text-gray-700">What is the main goal of a bank?</span>
+            <button onclick="showResponses('q1')" class="ml-4 text-blue-600 font-bold">→</button>
+          </div>
+        </div>
+
+        <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
+          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
+          <div class="flex space-x-1">
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+          </div>
+        </div>
+
+        <div id="q1Responses" class="hidden">
+          <!-- Top Bar -->
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="font-bold text-lg">ChatGABV</h3>
+              <p class="text-sm text-gray-500 font-light">Our smartest model. Great for re-imagining the future</p>
+            </div>
+            <div class="bg-gray-100 px-4 py-2 rounded-xl text-gray-700 font-medium">
+              What is the main goal of a bank?
+            </div>
+          </div>
+          <!-- Title -->
+          <div class="text-center mb-8">
+            <h2 class="text-xl font-bold mb-2">You’re giving feedback on ChatGABV.</h2>
+            <p class="text-sm text-gray-600">Which response do you prefer? <br/>Responses may take a moment to load.</p>
+          </div>
+          <!-- Responses -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500">(Business as Usual)</span></h4>
+                <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
+                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
+                  <li>Accepting deposits from customers.</li>
+                  <li>Lending money at higher interest rates than it pays on deposits.</li>
+                  <li>Providing financial services like investments, payments, and currency exchange.</li>
+                </ul>
+              </div>
+              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 hover:bg-gray-900">I prefer this response</button>
+            </div>
+            <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold mb-2">Response 2 – ChatGABV</h4>
+                <p class="text-sm mb-3">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
+                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
+                  <li>Balancing profit with purpose.</li>
+                  <li>Using finance to support sustainable development and community empowerment.</li>
+                  <li>Building long-term relationships with customers.</li>
+                </ul>
+              </div>
+              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 hover:bg-green-700">I prefer this response</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 Placeholder -->
+      <div id="q2" class="hidden">
+        <div id="q2Card" class="mb-6">
+          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
+          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
+            <span class="text-gray-700">[Next question goes here...]</span>
+            <button onclick="showResponses('q2')" class="ml-4 text-blue-600 font-bold">→</button>
+          </div>
+        </div>
+        <div id="q2Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
+          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
+          <div class="flex space-x-1">
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+          </div>
+        </div>
+        <div id="q2Responses" class="hidden">
+          <div class="text-center">
+            <h2 class="text-xl font-bold">Placeholder for Question 2 responses</h2>
+            <p class="text-sm text-gray-600">You can add new response cards here later.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
  
 <!-- Banking on Values Day -->
 <section id="bovd" class="bg-gradient-to-b from-white to-gray-100 text-gray-900 flex flex-col justify-center items-center py-20 px-4 text-center">
@@ -272,3 +412,4 @@
   </script>
 </body>
 </html>
+
