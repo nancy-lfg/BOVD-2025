@@ -168,64 +168,79 @@
   </section>
 
 <!-- Combined BOVD + Film Section -->
-<section id="film" class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white py-16 px-6">
-  <div class="grid md:grid-cols-2 gap-0 max-w-6xl mx-auto items-stretch">
+<section id="film" class="grid md:grid-cols-2 min-h-screen">
 
-    <!-- Left: White rounded text bubble -->
-    <div class="bg-white rounded-2xl border-8 border-transparent bg-clip-padding relative flex flex-col justify-center px-6 py-10"
-         style="background-image: linear-gradient(white, white), linear-gradient(to right, #1e1b4b, #4c1d95, #1e3a8a); background-origin: border-box; background-clip: content-box, border-box;">
-      
-      <!-- Content wrapper (scaled down slightly for balance) -->
-      <div class="max-w-md mx-auto text-left">
-        <div class="flex justify-center mb-6">
-          <img src="https://www.gabv.org/wp-content/uploads/2021/08/GABV-Logo-300x176.png"
-               alt="Global Alliance for Banking on Values Logo"
-               class="h-16 md:h-20">
-        </div>
-
-        <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
-        <div class="w-8 h-0.5 bg-gray-400 mb-4"></div>
-
-        <h2 class="text-3xl sm:text-4xl font-taviraj-light mb-6">
-          <span class="font-medium text-blue-600">ChatGABV:</span>
-          Help AI Rethink Banking
-        </h2>
-
-        <div class="text-base md:text-lg leading-relaxed font-roboto text-gray-800">
-          <p class="mb-4">
-            AI needs to see and learn new ways of doing banking.<br/>
-            Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
-          </p>
-          <p class="mb-4 font-semibold">There is a different way.</p>
-          <p class="mb-4">
-            We can shape AI so it learns that banking can be different from the past — 
-            to see a future which already exists, where the goal of banking is to serve our collective needs.
-          </p>
-          <p class="mb-4">
-            Once we help AI see the future, then other people can see it too. 
-            And join our work toward a better world.
-          </p>
-          <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
-          <p class="italic text-blue-600 mt-4">#ChatGABV</p>
-        </div>
-      </div>
+  <!-- Left: BOVD Content with faded green bubbles -->
+  <div class="relative bg-white flex flex-col justify-center items-start py-16 px-6 md:px-12">
+    <!-- Background bubbles -->
+    <div class="absolute inset-0 pointer-events-none"
+         style="
+           background-image:
+             linear-gradient(rgba(16,185,129,0.08), rgba(16,185,129,0.08)),
+             url('https://www.gabv.org/wp-content/uploads/2021/11/Group-7-wid.png');
+           background-repeat: no-repeat;
+           background-position: left center;
+           background-size: 60%;
+           background-blend-mode: multiply;
+           opacity: 0.28;
+         ">
     </div>
 
-    <!-- Right: Film Embed with gradient border and rounded corners -->
-    <div class="flex items-center justify-center">
-      <div class="w-full h-full rounded-2xl border-8 border-transparent bg-clip-padding overflow-hidden"
-           style="background-image: linear-gradient(to right, #1e1b4b, #4c1d95, #1e3a8a); background-origin: border-box; background-clip: content-box, border-box;">
-        <iframe class="w-full aspect-video rounded-xl"
+    <!-- Content wrapper -->
+    <div class="relative z-10 max-w-md w-full text-left">
+      
+      <!-- Centered logo -->
+      <div class="flex justify-center mb-6">
+        <img src="https://raw.githubusercontent.com/nancy-lfg/BOVD-2025/main/images.png"
+             alt="Global Alliance for Banking on Values Logo"
+             class="h-20">
+      </div>
+
+      <p class="text-gray-500 font-bold uppercase tracking-wide mb-2">BOVD 2025:</p>
+      <div class="w-8 h-0.5 bg-gray-400 mb-4"></div>
+
+      <!-- Title (Taviraj Extra-Light, with slightly bolder "ChatGABV:") -->
+      <h2 class="text-4xl sm:text-5xl font-taviraj-light mb-6">
+        <span class="font-normal text-blue-600">ChatGABV:</span>
+        Help AI Rethink Banking
+      </h2>
+
+      <!-- Body text (Roboto regular, bold preserved) -->
+      <div class="text-lg leading-relaxed font-roboto">
+        <p class="mb-4">
+          AI needs to see and learn new ways of doing banking.<br/>
+          Otherwise, it can <strong>keep us stuck in the status quo</strong> of profit over people.
+        </p>
+        <p class="mb-4 font-semibold">There is a different way.</p>
+        <p class="mb-4">
+          We can shape AI so it learns that banking can be different from the past — 
+          to see a future which already exists, where the goal of banking is to serve our collective needs.
+        </p>
+        <p class="mb-4">
+          Once we help AI see the future, then other people can see it too. 
+          And join our work toward a better world.
+        </p>
+        <p class="font-semibold">Let’s teach AI what banking can really mean.</p>
+        <p class="italic text-blue-600 mt-4">#ChatGABV</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Film Embed -->
+  <div class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white flex justify-center items-center py-16 px-8">
+    <div class="w-full max-w-2xl">
+      <h3 class="text-4xl mb-6 text-center">Watch the Film</h3>
+      <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+        <iframe class="w-full h-full"
                 src="https://www.youtube.com/embed/your-video-id"
                 title="BOVD Film"
                 frameborder="0"
                 allowfullscreen></iframe>
       </div>
     </div>
-
   </div>
-</section>
 
+</section>
 
   <!-- Why It Matters -->
   <section id="why" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
