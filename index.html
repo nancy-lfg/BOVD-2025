@@ -15,7 +15,7 @@
       scroll-snap-type: y mandatory; 
       font-family: 'Roboto', sans-serif; 
     }
-    section { scroll-snap-align: start; min-height: 100vh; }
+    section { scroll-snap-align: start; scroll-margin-top: 80px; }
 
      /* Custom font helpers */
     .font-taviraj { font-family: 'Taviraj', serif; }
@@ -28,7 +28,7 @@
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
-      <a href="/" onclick="window.location.reload(); return false;">
+       <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
         <img src="https://raw.githubusercontent.com/nancy-lfg/BOVD-2025/main/Untitled%20design%20(1).png" 
              alt="Custom Logo" 
              class="h-16 w-auto cursor-pointer">
