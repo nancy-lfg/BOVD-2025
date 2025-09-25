@@ -6,21 +6,14 @@
   <title>BOVD Microsite</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Roboto font -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Taviraj:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Roboto + Taviraj -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Taviraj:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     html { scroll-behavior: smooth; }
-    body { 
-      scroll-snap-type: y mandatory; 
-      font-family: 'Roboto', sans-serif; 
-    }
+    body { font-family: 'Roboto', sans-serif; }
     section { scroll-snap-align: start; scroll-margin-top: 80px; }
-
-     /* Custom font helpers */
     .font-taviraj { font-family: 'Taviraj', serif; }
-    .font-taviraj-light { font-family: 'Taviraj', serif; font-weight: 200; }
-
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -28,248 +21,192 @@
   <!-- Header -->
   <header class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-2">
-       <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); resetChat(); return false;">
+      <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); resetChat(); return false;">
         <img src="https://raw.githubusercontent.com/nancy-lfg/BOVD-2025/main/Untitled%20design%20(1).png" 
              alt="Custom Logo" 
              class="h-16 w-auto cursor-pointer">
-
       </a>
-      <!-- ✅ Nav fonts changed (uppercase, tracking-wide) -->
       <nav class="space-x-6 text-sm uppercase tracking-wide font-medium">
-      <a href="#bovd-film" class="hover:text-blue-600">Watch the Film</a>
-      <a href="#why-it-matters" class="hover:text-blue-600">Why It Matters</a>
-      <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Shape AI</a>
-        </nav>
+        <a href="#bovd-film" class="hover:text-blue-600">Watch the Film</a>
+        <a href="#why-it-matters" class="hover:text-blue-600">Why It Matters</a>
+        <a href="#cta" class="hover:text-blue-600 font-semibold text-blue-600">Shape AI</a>
+      </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-<section id="hero" class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white px-6 text-center flex flex-col justify-center items-center"
-  style="min-height: calc(100vh - 64px);">
-  <div class="max-w-4xl w-full text-center mb-8">
-   <h2 class="text-5xl font-extrabold mb-2">Welcome to ChatGABV</h2>
+  <section id="hero" class="bg-gradient-to-r from-indigo-900 via-purple-900 to-blue-900 text-white px-6 text-center flex flex-col justify-center items-center" style="min-height: calc(100vh - 64px);">
+    <div class="max-w-4xl w-full text-center mb-8">
+      <h2 class="text-5xl font-taviraj font-extrabold mb-2">Welcome to ChatGABV</h2>
+      <p class="text-sm text-gray-300 font-light">The AI which reflects the most up-to-date version of banking.</p>
 
-<!-- Tiny grey text -->
-<p class="text-sm text-gray-300">
-  The AI which reflects the most up-to-date version of banking.
-</p>
+      <div class="mt-24 md:mt-32">
+        <p class="text-2xl font-medium mb-6">Ask me about banking. Click the arrow (if you’re curious).</p>
+      </div>
 
-<!-- Space before CTA -->
-<div class="mt-24 md:mt-32"> 
-  <!-- CTA line (regular weight) -->
-  <p class="text-2xl mb-6">
-    Ask me about banking. Click the arrow (if you’re curious).
-  </p>
-</div>
-
-
-    <!-- Chat container -->
-    <!-- Restored original Hero Chat -->
-    <div class="bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
-      <!-- Question 1 -->
-      <div id="q1">
-        <div id="q1Card" class="mb-6">
-          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
-          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
-            <span class="text-gray-700">What is the main goal of a bank?</span>
-            <button onclick="showResponses('q1')" class="ml-4 text-blue-600 font-bold">→</button>
-          </div>
-        </div>
-        <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
-          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
-          <div class="flex space-x-1">
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
-          </div>
-        </div>
-        <div id="q1Responses" class="hidden">
-          <div class="flex justify-between items-start mb-6">
-            <div>
-              <h3 class="font-bold text-lg">ChatGABV</h3>
-              <p class="text-sm text-gray-500 font-light">Our smartest model. Great for re-imagining the future</p>
-            </div>
-            <div class="bg-gray-100 px-4 py-2 rounded-xl text-gray-700 font-medium">
-              What is the main goal of a bank?
+      <!-- Chat container -->
+      <div class="bg-white text-gray-800 rounded-2xl shadow-xl max-w-5xl w-full p-6">
+        <!-- Question 1 -->
+        <div id="q1">
+          <div id="q1Card" class="mb-6">
+            <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
+            <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
+              <span class="text-gray-700 font-normal">What is the main goal of a bank?</span>
+              <button onclick="showResponses('q1')" class="ml-4 text-blue-600 font-bold">→</button>
             </div>
           </div>
-          <div class="text-center mb-8">
-            <h2 class="text-xl font-bold mb-2">You’re giving feedback on ChatGABV.</h2>
-            <p class="text-sm text-gray-600">Which response do you prefer? <br/>Responses may take a moment to load.</p>
+          <div id="q1Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
+            <span class="text-sm text-gray-500 font-light italic">ChatGABV is thinking</span>
+            <div class="flex space-x-1">
+              <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+              <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+              <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+            </div>
           </div>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
+          <div id="q1Responses" class="hidden">
+            <div class="flex justify-between items-start mb-6">
               <div>
-                <h4 class="font-bold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500">(Business as Usual)</span></h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
-                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
-                  <li>Accepting deposits from customers.</li>
-                  <li>Lending money at higher interest rates than it pays on deposits.</li>
-                  <li>Providing financial services like investments, payments, and currency exchange.</li>
-                </ul>
+                <h3 class="font-semibold text-lg roboto">ChatGABV</h3>
+                <p class="text-sm text-gray-500 font-light">Our smartest model. Great for re-imagining the future</p>
               </div>
-              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 hover:bg-gray-900">I prefer this response</button>
-            </div>
-            <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
-              <div>
-                <h4 class="font-bold mb-2">Response 2 – ChatGABV</h4>
-                <p class="text-sm mb-3">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
-                <ul class="list-disc list-inside text-sm mb-3 space-y-1">
-                  <li>Balancing profit with purpose.</li>
-                  <li>Using finance to support sustainable development and community empowerment.</li>
-                  <li>Building long-term relationships with customers.</li>
-                </ul>
+              <div class="bg-gray-100 px-4 py-2 rounded-xl text-gray-700 font-normal">
+                What is the main goal of a bank?
               </div>
-              <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 hover:bg-green-700">I prefer this response</button>
+            </div>
+            <div class="text-center mb-8">
+              <h2 class="text-xl font-semibold mb-2">You’re giving feedback on ChatGABV.</h2>
+              <p class="text-sm text-gray-600 font-normal">Which response do you prefer? <br/>Responses may take a moment to load.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex flex-col justify-between">
+                <div>
+                  <h4 class="font-semibold mb-2">Response 1 – ChatBAU <span class="text-sm text-gray-500 font-normal">(Business as Usual)</span></h4>
+                  <p class="text-sm mb-3 font-normal">The main goal of a bank is to <strong>maximize profits for its shareholders</strong> while maintaining financial stability.</p>
+                  <ul class="list-disc list-inside text-sm mb-3 space-y-1 font-normal">
+                    <li>Accepting deposits from customers.</li>
+                    <li>Lending money at higher interest rates than it pays on deposits.</li>
+                    <li>Providing financial services like investments, payments, and currency exchange.</li>
+                  </ul>
+                </div>
+                <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-gray-800 text-white rounded-lg py-2 font-medium hover:bg-gray-900">I prefer this response</button>
+              </div>
+              <div class="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col justify-between">
+                <div>
+                  <h4 class="font-semibold mb-2">Response 2 – ChatGABV</h4>
+                  <p class="text-sm mb-3 font-normal">The main goal of a bank is to <strong>be a force for positive change in society</strong>, whilst providing essential financial services.</p>
+                  <ul class="list-disc list-inside text-sm mb-3 space-y-1 font-normal">
+                    <li>Balancing profit with purpose.</li>
+                    <li>Using finance to support sustainable development and community empowerment.</li>
+                    <li>Building long-term relationships with customers.</li>
+                  </ul>
+                </div>
+                <button onclick="nextQuestion('q1','q2')" class="mt-4 bg-green-600 text-white rounded-lg py-2 font-medium hover:bg-green-700">I prefer this response</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="q2" class="hidden">
+          <div id="q2Card" class="mb-6">
+            <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
+            <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
+              <span class="text-gray-700 font-normal">[Next question goes here...]</span>
+              <button onclick="showResponses('q2')" class="ml-4 text-blue-600 font-bold">→</button>
+            </div>
+          </div>
+          <div id="q2Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
+            <span class="text-sm text-gray-500 font-light italic">ChatGABV is thinking</span>
+            <div class="flex space-x-1">
+              <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+              <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
+              <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
+            </div>
+          </div>
+          <div id="q2Responses" class="hidden">
+            <div class="text-center">
+              <h2 class="text-xl font-semibold">Placeholder for Question 2 responses</h2>
+              <p class="text-sm text-gray-600 font-normal">You can add new response cards here later.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Question 2 -->
-      <div id="q2" class="hidden">
-        <div id="q2Card" class="mb-6">
-          <p class="text-left font-medium text-gray-700 mb-2">Question:</p>
-          <div class="bg-gray-100 rounded-xl px-4 py-3 flex justify-between items-center">
-            <span class="text-gray-700">[Next question goes here...]</span>
-            <button onclick="showResponses('q2')" class="ml-4 text-blue-600 font-bold">→</button>
-          </div>
-        </div>
-        <div id="q2Typing" class="hidden flex justify-start items-center space-x-2 mb-6">
-          <span class="text-sm text-gray-500">ChatGABV is thinking</span>
-          <div class="flex space-x-1">
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-150"></span>
-            <span class="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-300"></span>
-          </div>
-        </div>
-        <div id="q2Responses" class="hidden">
-          <div class="text-center">
-            <h2 class="text-xl font-bold">Placeholder for Question 2 responses</h2>
-            <p class="text-sm text-gray-600">You can add new response cards here later.</p>
+    <div class="mt-5">
+      <a href="#why-it-matters" class="inline-block px-4 py-2 rounded-full text-sm font-medium shadow transition bg-blue-600 text-white hover:bg-blue-700">
+        Banking on Values Day 2025
+      </a>
+    </div>
+  </section>
+
+  <!-- Film Section -->
+  <section id="bovd-film" style="min-height: 0;"> 
+    <div class="h-5 w-full bg-gradient-to-r from-yellow-200 via-orange-300 to-pink-400"></div>
+    <div class="w-full flex flex-col md:flex-row">
+      <div class="md:w-1/2 w-full flex items-center h-[315px] md:h-[562px]">
+        <div class="w-full px-6 md:px-10 lg:px-16 py-6">
+          <a href="#why-it-matters" class="inline-block px-4 py-2 mb-4 rounded-full text-sm font-medium shadow bg-white text-gray-800 hover:bg-gray-100 transition">Banking on Values Day 2025</a>
+          <h2 class="text-3xl font-taviraj font-semibold mb-4 leading-snug">
+            <span class="font-bold text-blue-600">ChatGABV:</span> Help AI Rethink Banking
+          </h2>
+          <div class="space-y-3 text-base leading-relaxed text-gray-800 font-normal">
+            <p>AI needs to see and learn new ways of doing banking.<br/>Otherwise, it can <strong>keep us stuck in the status quo of profit over people.</strong></p>
+            <p><strong>There is a different way.</strong></p>
+            <p>We can shape AI so it learns that banking can be different from the past — to see a future which already exists, where the goal of banking is to serve our collective needs.</p>
+            <p>Once we help AI see the future, then other people can see it too. And join our work toward a better world.</p>
+            <p><strong>Let’s teach AI what banking can really mean.</strong></p>
+            <p class="italic text-blue-600 mt-3">#ChatGABV</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Banking on Values Day button -->
-  <div class="mt-5">
-    <a href="#why-it-matters"
-       class="inline-block px-4 py-2 rounded-full text-sm font-medium shadow transition
-              bg-blue-600 text-white hover:bg-blue-700">
-      Banking on Values Day 2025
-    </a>
-  </div>
-</section>
-
-   <!-- BOVD/Film section -->
-  
-<section id="bovd-film" style="min-height: 0;"> 
-  <div class="h-5 w-full bg-gradient-to-r from-yellow-200 via-orange-300 to-pink-400"></div>
-  <div class="w-full flex flex-col md:flex-row">
-    
-    <!-- Left: text column -->
-    <div class="md:w-1/2 w-full flex items-center h-[315px] md:h-[562px]">
-      <div class="w-full px-6 md:px-10 lg:px-16 py-6">
-        <!-- Replaced 'BOVD 2025:' with button -->
-        <a href="#why-it-matters"
-           class="inline-block px-4 py-2 mb-4 rounded-full text-sm font-medium shadow
-                  bg-white text-gray-800 hover:bg-gray-100 transition">
-          Banking on Values Day 2025
-        </a>
-
-        <h2 class="text-2xl sm:text-3xl font-taviraj-light mb-4 leading-snug">
-          <span class="font-medium text-blue-600">ChatGABV:</span> Help AI Rethink Banking
-        </h2>
-
-        <div class="space-y-3 text-sm md:text-base leading-relaxed text-gray-800">
-          <p>
-            AI needs to see and learn new ways of doing banking.<br/>
-            Otherwise, it can <strong>keep us stuck in the status quo of profit over people.</strong>
-          </p>
-
-          <p><strong>There is a different way.</strong></p>
-
-          <p>
-            We can shape AI so it learns that banking can be different from the past — 
-            to see a future which already exists, where the goal of banking is to serve our collective needs.
-          </p>
-
-          <p>
-            Once we help AI see the future, then other people can see it too. 
-            And join our work toward a better world.
-          </p>
-
-          <p><strong>Let’s teach AI what banking can really mean.</strong></p>
-          <p class="italic text-blue-600 mt-3">#ChatGABV</p>
-        </div>
+      <div class="md:w-1/2 w-full bg-black">
+        <iframe class="w-full h-[315px] md:h-[562px]" src="https://www.youtube.com/embed/your-video-id" title="BOVD Film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+    <div class="h-5 w-full bg-gradient-to-r from-yellow-200 via-orange-300 to-pink-400"></div>
+  </section>
 
-    <!-- Right: video column -->
-    <div class="md:w-1/2 w-full bg-black">
-      <iframe
-        class="w-full h-[315px] md:h-[562px]"
-        src="https://www.youtube.com/embed/your-video-id"
-        title="BOVD Film"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <!-- Thin gradient strip directly below -->
-  <div class="h-5 w-full bg-gradient-to-r from-yellow-200 via-orange-300 to-pink-400"></div>
-</section>
-
-
-
-  <!-- BOVD -->
+  <!-- Why it matters -->
   <section id="why-it-matters" class="bg-gradient-to-b from-gray-100 to-white py-16 flex flex-col justify-center items-center">
     <div class="max-w-4xl mx-auto text-center px-6">
-     <h3 class="text-4xl font-taviraj mb-2 font-medium">Banking on Values Day</h3>
-      <h4 class="text-2xl font-taviraj-light text-gray-500 mb-6">Why it matters</h4>
-      <p class="text-xl leading-relaxed mb-12">
-        Banking On Values Day brings together a global movement for positive transformation.<br/>
-        Driven by the Global Alliance for Banking on Values (GABV).
-      </p>
+      <h3 class="text-4xl font-taviraj font-semibold mb-2">Banking on Values Day</h3>
+      <h4 class="text-2xl font-taviraj font-normal text-gray-500 mb-6">Why it matters</h4>
+      <p class="text-xl leading-relaxed mb-12 font-normal">Banking On Values Day brings together a global movement for positive transformation.<br/>Driven by the Global Alliance for Banking on Values (GABV).</p>
+
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-extrabold text-orange-400 mb-2">70%</span>
-          <p class="text-gray-700">of people want their bank to focus on sustainability.</p>
+          <span class="text-5xl font-taviraj font-extrabold text-orange-400 mb-2">70%</span>
+          <p class="text-gray-700 font-medium">of people want their bank to focus on sustainability.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-extrabold text-orange-400 mb-2">1.4B</span>
-          <p class="text-gray-700">adults worldwide remain unbanked and underserved.</p>
+          <span class="text-5xl font-taviraj font-extrabold text-orange-400 mb-2">1.4B</span>
+          <p class="text-gray-700 font-medium">adults worldwide remain unbanked and underserved.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center">
-          <span class="text-5xl font-extrabold text-orange-400 mb-2">90%</span>
-          <p class="text-gray-700">of banks prioritize profit over community well-being.</p>
+          <span class="text-5xl font-taviraj font-extrabold text-orange-400 mb-2">90%</span>
+          <p class="text-gray-700 font-medium">of banks prioritize profit over community well-being.</p>
         </div>
       </div>
-      <h4 class="text-3xl font-taviraj-light mb-4">Banking for Good Around the World</h4>
-      <p class="text-gray-700 mb-8">
-        Values-based banks work to intentionally drive and create positive change. They innovate banking products and
-        services and engage with partners to provide solutions to social and environmental issues in the communities
-        they serve. Here are some examples of best practices.
-      </p>
+
+      <h4 class="text-3xl font-taviraj font-normal mb-4">Banking for Good Around the World</h4>
+      <p class="text-gray-700 mb-8 font-normal">Values-based banks work to intentionally drive and create positive change. They innovate banking products and services and engage with partners to provide solutions to social and environmental issues in the communities they serve. Here are some examples of best practices.</p>
+
       <div class="grid gap-8 md:grid-cols-3 w-full">
         <div class="bg-white p-6 rounded-2xl shadow">
           <img src="https://www.gabv.org/wp-content/uploads/2023/11/BH-3-1536x863.jpg" alt="Triodos Bank" class="rounded-xl mb-4 w-full object-cover h-48">
-          <h4 class="font-bold text-xl mb-2">Triodos Bank, UK</h4>
-          <p class="text-gray-600">Support for nature-based investment projects.</p>
+          <h4 class="font-taviraj font-semibold text-xl mb-2">Triodos Bank, UK</h4>
+          <p class="text-gray-600 font-normal">Support for nature-based investment projects.</p>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <img src="https://www.gabv.org/wp-content/uploads/2023/10/Zwei-Manner-mit-einer-Kiste-Tomaten.jpg" alt="Freie Gemeinschaftsbank" class="rounded-xl mb-4 w-full object-cover h-48">
-          <h4 class="font-bold text-xl mb-2">Freie Gemeinschaftsbank, Switzerland</h4>
-          <p class="text-gray-600">Pay what you want: customers decide their own fees.</p>
+          <h4 class="font-taviraj font-semibold text-xl mb-2">Freie Gemeinschaftsbank, Switzerland</h4>
+          <p class="text-gray-600 font-normal">Pay what you want: customers decide their own fees.</p>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow">
           <img src="https://www.gabv.org/wp-content/uploads/2023/10/Porterville-BSB-Portraits-2023-215-1536x1024.jpg" alt="Beneficial State Bank" class="rounded-xl mb-4 w-full object-cover h-48">
-          <h4 class="font-bold text-xl mb-2">Beneficial State Bank</h4>
-          <p class="text-gray-600">Helping immigrants get access to credit.</p>
+          <h4 class="font-taviraj font-semibold text-xl mb-2">Beneficial State Bank</h4>
+          <p class="text-gray-600 font-normal">Helping immigrants get access to credit.</p>
         </div>
       </div>
     </div>
@@ -277,19 +214,21 @@
 
   <!-- CTA -->
   <section id="cta" class="bg-gradient-to-r from-emerald-700 via-green-900 to-emerald-700 text-white py-32 px-6 text-center flex flex-col justify-center items-center">
-    <h3 class="text-4xl font-taviraj-light mb-6">How to Shape AI</h3>
-    <p class="text-xl max-w-2xl mx-auto mb-8">Let's teach AI what banking can really mean — and inspire others to join us.</p>
-    <ul class="list-disc list-inside text-lg mb-8 max-w-xl text-left space-y-2">
+    <h3 class="text-4xl font-taviraj font-semibold mb-6">How to Shape AI</h3>
+    <p class="text-xl max-w-2xl mx-auto mb-8 font-normal">Let's teach AI what banking can really mean — and inspire others to join us.</p>
+    <ul class="list-disc list-inside text-lg mb-8 max-w-xl text-left space-y-2 font-normal">
       <li>Share your perspective on what values in banking mean to you.</li>
       <li>Join community discussions and workshops around ethical AI.</li>
       <li>Spread the word — invite others to explore values-led banking.</li>
     </ul>
-    <a href="#" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow hover:scale-105 transition mb-4">Read the Guide</a>
-    <a href="#" class="underline text-white">Find out about values-led banking</a>
+    <a href="#" class="px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl shadow hover:scale-105 transition mb-4">Read the Guide</a>
+    <a href="#" class="underline font-medium">Find out about values-led banking</a>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-gray-500 py-6">© 2025 BOVD Microsite · Co-created with AI</footer>
+    <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6 text-sm font-light">
+    © 2025 BOVD Microsite · Co-created with AI
+  </footer>
 
   <script>
     function showResponses(q) {
@@ -300,21 +239,23 @@
         document.getElementById(q + 'Responses').classList.remove('hidden');
       }, 2000);
     }
+
     function nextQuestion(current, next) {
       document.getElementById(current).classList.add('hidden');
       document.getElementById(next).classList.remove('hidden');
       document.getElementById(next + 'Card').scrollIntoView({ behavior: 'smooth' });
     }
-    function resetChat() {
-  // Reset Question 1
-  document.getElementById('q1').classList.remove('hidden');
-  document.getElementById('q1Card').classList.remove('hidden');
-  document.getElementById('q1Typing').classList.add('hidden');
-  document.getElementById('q1Responses').classList.add('hidden');
 
-  // Hide Question 2 (and any others you add later)
-  document.getElementById('q2').classList.add('hidden');
-}
+    function resetChat() {
+      // Reset Question 1
+      document.getElementById('q1').classList.remove('hidden');
+      document.getElementById('q1Card').classList.remove('hidden');
+      document.getElementById('q1Typing').classList.add('hidden');
+      document.getElementById('q1Responses').classList.add('hidden');
+
+      // Hide Question 2 (and any others you add later)
+      document.getElementById('q2').classList.add('hidden');
+    }
   </script>
 </body>
 </html>
