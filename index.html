@@ -236,3 +236,34 @@
 <footer class="text-center text-gray-500 py-6 text-sm font-roboto font-normal">
   © 2025 BOVD Microsite · Co-created with AI
 </footer>
+
+  <script>
+  function showResponses(q) {
+    document.getElementById(q + 'Card').classList.add('hidden');
+    document.getElementById(q + 'Typing').classList.remove('hidden');
+    setTimeout(() => {
+      document.getElementById(q + 'Typing').classList.add('hidden');
+      document.getElementById(q + 'Responses').classList.remove('hidden');
+    }, 2000);
+  }
+
+  function nextQuestion(current, next) {
+    document.getElementById(current).classList.add('hidden');
+    document.getElementById(next).classList.remove('hidden');
+    document.getElementById(next + 'Card').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function resetChat() {
+    // Reset Question 1
+    document.getElementById('q1').classList.remove('hidden');
+    document.getElementById('q1Card').classList.remove('hidden');
+    document.getElementById('q1Typing').classList.add('hidden');
+    document.getElementById('q1Responses').classList.add('hidden');
+
+    // Hide Question 2 (and any others you add later)
+    document.getElementById('q2').classList.add('hidden');
+  }
+</script>
+
+  </body>
+</html>
